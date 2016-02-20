@@ -269,8 +269,8 @@ trait SearchableTrait
 
         foreach ($words as $word)
         {
-            $cases[] = $this->getCaseCompare($column, $like_comparator, $relevance * $relevance_multiplier);
-            $this->search_bindings[] = $pre_word . $word . $post_word;
+            $cases[] = $this->getCaseCompare($column, $like_comparator, $pre_word . $word . $post_word, $relevance * $relevance_multiplier);
+            //$this->search_bindings[] = $pre_word . $word . $post_word;
         }
 
         return implode(' + ', $cases);
@@ -284,14 +284,14 @@ trait SearchableTrait
      * @param float $relevance
      * @return string
      */
-    protected function getCaseCompare($column, $compare, $relevance) {
+    protected function getCaseCompare($column, $compare, $word, $relevance) {
         if($this->getDatabaseDriver() == 'pgsql') {
-            $field = "LOWER(" . $column . ") " . $compare . " ?";    
+            $field = "LOWER(" . $column . ") " . $compare . " " . app('db')->getPdo()->quote($word);
             return '(case when ' . $field . ' then ' . $relevance . ' else 0 end)';
         }
 
         $column = str_replace('.', '`.`', $column);
-        $field = "LOWER(`" . $column . "`) " . $compare . " ?";
+        $field = "LOWER(`" . $column . "`) " . $compare . " "  . app('db')->getPdo()->quote($word);
         return '(case when ' . $field . ' then ' . $relevance . ' else 0 end)';
     }
 
