@@ -1,22 +1,22 @@
 {
-    "name": "nicolaslopezj/searchable",
+    "name": "simexis/searchable",
     "description": "Eloquent model search trait.",
     "keywords": ["laravel", "eloquent", "search", "searchable", "database", "model"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Nicolas Lopez",
-            "email": "nicolaslopezj@me.com"
+            "name": "Georgi Nachev",
+            "email": "jooorooo@gmail.com"
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "illuminate/database": "4.2.x|~5.0",
+        "php": ">=5.5.9",
+        "illuminate/database": ">=4.2",
         "ext-mbstring": "*"
     },
     "autoload": {
         "psr-4": {
-            "Nicolaslopezj\\Searchable\\": "src/"
+            "Simexis\\Searchable\\": "src/"
         }
     },
     "minimum-stability": "stable"

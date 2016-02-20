@@ -1,7 +1,9 @@
 Searchable, a search trait for Laravel
 ==========================================
 
-Searchable is a trait for Laravel 4.2+ and Laravel 5.0 that adds a simple search function to Eloquent Models.
+Based on [nicolaslopezj/searchable](https://github.com/nicolaslopezj/searchable).
+
+Searchable is a trait for Laravel 4.2+ and Laravel 5 that adds a simple search function to Eloquent Models.
 
 Searchable allows you to perform searches in a table giving priorities to each field for the table and it's relations.
 
@@ -12,7 +14,7 @@ This is not optimized for big searches, but sometimes you just need to make it s
 Simply add the package to your `composer.json` file and run `composer update`.
 
 ```
-"nicolaslopezj/searchable": "1.*"
+"simexis/searchable": "1.*"
 ```
 
 # Usage
@@ -20,7 +22,7 @@ Simply add the package to your `composer.json` file and run `composer update`.
 Add the trait to your model and your search rules.
 
 ```php
-use Nicolaslopezj\Searchable\SearchableTrait;
+use Simexis\Searchable\SearchableTrait;
 
 class User extends \Eloquent
 {
@@ -110,7 +112,7 @@ Here is an example query
 
 ####Eloquent Model:
 ```php
-use Nicolaslopezj\Searchable\SearchableTrait;
+use Simexis\Searchable\SearchableTrait;
 
 class User extends \Eloquent
 {
@@ -193,4 +195,4 @@ order by `relevance` desc
 
 Anyone is welcome to contribute. Fork, make your changes, and then submit a pull request.
 
-[![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://gratipay.com/nicolaslopezj/)
+[![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://gratipay.com/simexis/)
